@@ -1,0 +1,15 @@
+ let g:user_zen_expandabbr_key = '<c-e>'
+ let g:use_zen_complete_tag = 1
+ autocmd BufWritePre * :%s/\s\+$//e
+
+ map <F1> <Esc>
+imap <F1> <Esc>
+
+ " Capfile is Ruby
+ au BufRead,BufNewFile {Capfile}    set ft=ruby
+
+ " thor files are Ruby
+ au BufRead,BufNewFile {*.thor}     set ft=ruby
+
+ " insert => by Ctrl+L
+ imap <C-l> <Space>=><Space>

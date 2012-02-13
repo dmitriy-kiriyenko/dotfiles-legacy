@@ -1,0 +1,8 @@
+--sort-files
+--smart-case
+--type-set=ruby=.rb,.rake
+--type-set=erb=.erb,.haml
+--type-set=js=.js,.coffee,.json
+--type-set=css=.css,.scss,.sass
+--type-set=feature=.feature
+--ignore-dir=log,tmp

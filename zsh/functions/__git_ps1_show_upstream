@@ -1,0 +1,83 @@
+local key value
+local upstream=git legacy="" verbose=""
+
+# get some config options from git-config
+while read key value; do
+	case "$key" in
+	bash.showupstream)
+		GIT_PS1_SHOWUPSTREAM="$value"
+		if [[ -z "${GIT_PS1_SHOWUPSTREAM}" ]]; then
+			p=""
+			return
+		fi
+		;;
+	esac
+done < <(git config -z --get-regexp '^(bash\.showupstream)$' 2>/dev/null | tr '\0\n' '\n ')
+
+# parse configuration values
+for option in ${GIT_PS1_SHOWUPSTREAM}; do
+	case "$option" in
+	git) upstream="$option" ;;
+	verbose) verbose=1 ;;
+	legacy)  legacy=1  ;;
+	esac
+done
+
+# Find our upstream
+case "$upstream" in
+git)    upstream="@{upstream}" ;;
+esac
+
+# Find how many commits we are ahead/behind our upstream
+if [[ -z "$legacy" ]]; then
+	count="$(git rev-list --count --left-right \
+			"$upstream"...HEAD 2>/dev/null)"
+else
+	# produce equivalent output to --count for older versions of git
+	local commits
+	if commits="$(git rev-list --left-right "$upstream"...HEAD 2>/dev/null)"
+	then
+		local commit behind=0 ahead=0
+		for commit in $commits
+		do
+			case "$commit" in
+			"<"*) let ++behind
+				;;
+			*)    let ++ahead
+				;;
+			esac
+		done
+		count="$behind	$ahead"
+	else
+		count=""
+	fi
+fi
+
+# calculate the result
+if [[ -z "$verbose" ]]; then
+	case "$count" in
+	"") # no upstream
+		p="" ;;
+	"0	0") # equal to upstream
+		p="=" ;;
+	"0	"*) # ahead of upstream
+		p=">" ;;
+	*"	0") # behind upstream
+		p="<" ;;
+	*)	    # diverged from upstream
+		p="<>" ;;
+	esac
+else
+	case "$count" in
+	"") # no upstream
+		p="" ;;
+	"0	0") # equal to upstream
+		p=" u=" ;;
+	"0	"*) # ahead of upstream
+		p=" u+${count#0	}" ;;
+	*"	0") # behind upstream
+		p=" u-${count%	0}" ;;
+	*)	    # diverged from upstream
+		p=" u+${count#*	}-${count%	*}" ;;
+	esac
+fi

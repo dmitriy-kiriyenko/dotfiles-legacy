@@ -1,0 +1,20 @@
+# ls
+alias l='ls'
+alias ll='ls -al'
+alias lh='ls -Alh'
+
+# Custom git aliases
+alias gitk='gitk --all'
+alias gitx='gitx --all'
+
+# Other custom aliases
+alias e='mate'
+alias refresh='cd && cd ~-'
+alias be='bundle exec'
+alias bop='bundle open'
+alias wip='bundle exec cucumber --profile wip'
+alias rbp_report='rails_best_practices -f html --with-textmate && open rails_best_practices_output.html'
+alias pryc='pry -r ./config/environment'
+
+# commands starting with % for pasting from web
+alias %=' '
