@@ -12,6 +12,7 @@ setopt LOCAL_TRAPS # allow functions to have local traps
 setopt PROMPT_SUBST
 setopt COMPLETE_IN_WORD
 setopt IGNORE_EOF
+setopt NOCORRECT
 
 # add some readline keys back
 bindkey "^A" beginning-of-line
