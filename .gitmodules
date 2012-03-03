@@ -1,3 +1,9 @@
 [submodule "oh-my-zsh"]
 	path = oh-my-zsh
 	url = git@github.com:dmitriy-kiriyenko/oh-my-zsh.git
+[submodule "janus/zencoding"]
+	path = janus/zencoding
+	url = git://github.com/mattn/zencoding-vim.git
+[submodule "janus/tabular"]
+	path = janus/tabular
+	url = git://github.com/godlygeek/tabular.git
