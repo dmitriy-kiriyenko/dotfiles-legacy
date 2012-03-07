@@ -18,6 +18,10 @@ setopt NOCORRECT
 export LC_CTYPE=en_US.UTF-8
 export LANG=en_US.UTF-8
 
+# autocd to projects
+setopt auto_cd
+cdpath=($HOME/projects)
+
 # add some readline keys back
 bindkey "^A" beginning-of-line
 bindkey "^E" end-of-line
