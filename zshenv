@@ -1,3 +1,2 @@
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
-
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+# Here should have been instruction to load rbenv.
+# See https://github.com/sstephenson/rbenv/issues/173

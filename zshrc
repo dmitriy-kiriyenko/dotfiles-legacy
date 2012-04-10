@@ -7,7 +7,7 @@ ZSH=$HOME/.oh-my-zsh
 # time that oh-my-zsh is loaded.
 ZSH_THEME="robbyrussell"
 
-plugins=(brew bundler cap gem git github osx rails3 rake ruby textmate thor)
+plugins=(brew cap gem git github osx rails3 rake textmate thor)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -17,4 +17,6 @@ source $ZSH/oh-my-zsh.sh
 # use .localrc for settings specific to one system
 [[ -f ~/.localrc ]] && . ~/.localrc
 
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+# should be at the very end
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
