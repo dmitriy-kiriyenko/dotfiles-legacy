@@ -7,5 +7,13 @@ alias refresh='cd && cd ~-'
 alias rbp_report='rails_best_practices -f html --with-textmate && open rails_best_practices_output.html'
 alias pryc='pry -r ./config/environment'
 
+# Rails specific aliases
+alias be='bundle exec'
+alias bec='be cucumber'
+alias wip='bec --profile wip'
+alias bes='be rspec'
+alias ber='be rake'
+alias becap='be cap'
+
 # commands starting with % for pasting from web
 alias %=' '
