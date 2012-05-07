@@ -6,7 +6,12 @@ Pry.config.editor = "mvim --nofork"
 # Prompt with ruby version
 #Pry.prompt = [proc { |obj, nest_level| "#{RUBY_VERSION} (#{obj}):#{nest_level} > " }, proc { |obj, nest_level| "#{RUBY_VERSION} (#{obj}):#{nest_level} * " }]
 
-%w{hirb}.each { |gem| require gem }
+%w{hirb}.each do |gem|
+  begin
+    require gem
+  rescue LoadError
+  end
+end
 
 # Toys methods
 # Stealed from https://gist.github.com/807492
