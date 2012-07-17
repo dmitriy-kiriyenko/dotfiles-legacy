@@ -8,6 +8,9 @@ au BufRead,BufNewFile {Capfile}    set ft=ruby
 " thor files are Ruby
 au BufRead,BufNewFile {*.thor}     set ft=ruby
 
+" jbuilder files are Ruby
+au BufRead,BufNewFile {*.jbuilder}     set ft=ruby
+
 " insert => by Ctrl+L
 imap <C-l> <Space>=><Space>
 
