@@ -38,3 +38,5 @@
   default = current
 [github]
 	user = dmitriy-kiriyenko
+[help]
+	autocorrect = 1
