@@ -8,6 +8,7 @@
   br = branch
   di = diff
   dc = diff --cached
+  dw = diff --word-diff
   amend = commit --amend
   aa = add --all
   head = !git l -1
