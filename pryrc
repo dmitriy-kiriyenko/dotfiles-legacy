@@ -28,4 +28,4 @@ class Hash
 end
 
 # loading rails configuration if it is running as a rails console
-load File.dirname(__FILE__) + '/.railsrc' if defined?(Rails) && Rails.env
+load '~/.railsrc' if defined?(Rails) && Rails.env

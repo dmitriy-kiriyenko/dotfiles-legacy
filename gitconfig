@@ -29,6 +29,7 @@
 [core]
 	editor = vim -f
 	autocrlf = input
+  ignorecase = false
 	excludesfile = /Users/dak/.gitignore_global
 [apply]
 	whitespace = nowarn
@@ -42,3 +43,5 @@
 	autocorrect = 1
 [rerere]
 	enabled = 1
+[difftool "Kaleidoscope"]
+	cmd = ksdiff-wrapper git \"$LOCAL\" \"$REMOTE\"
