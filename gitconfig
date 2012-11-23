@@ -1,6 +1,6 @@
 [user]
-	name = Dmitriy Kiriyenko
-	email = dmitriy.kiriyenko@anahoret.com
+  name = Dmitriy Kiriyenko
+  email = dmitriy.kiriyenko@anahoret.com
 [alias]
   st = status -sb
   ci = commit
