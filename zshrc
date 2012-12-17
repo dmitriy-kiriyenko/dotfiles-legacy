@@ -7,7 +7,7 @@ ZSH=$HOME/.oh-my-zsh
 # time that oh-my-zsh is loaded.
 ZSH_THEME="robbyrussell"
 
-plugins=(brew cap gem git github osx rails3 rake textmate thor)
+plugins=(brew cap gem git osx rails3 rake textmate thor)
 
 source $ZSH/oh-my-zsh.sh
 
